@@ -1,0 +1,12 @@
+<p>orders-on-category works!</p>
+<input type="text" #categoryName>
+<button (click)="getOrders(categoryName.value)">Load Orders</button>
+
+<div *ngFor="let p of allOrders">
+    <div> {{p.bookingOrderId}}</div>
+    <div> {{p.orderDate}}</div>
+    <div> {{p.totalCost}}</div>
+    <div>{{p.transactionMode}}</div>
+    <div>{{p.quantity}}</div><br/>
+    <hr/>
+</div>

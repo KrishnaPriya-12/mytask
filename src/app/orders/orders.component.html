@@ -1,0 +1,36 @@
+
+<h2 style="color: brown; font-style: italic;">{{p.productName}} </h2>
+<table>
+    <tr>
+        
+        <td> 
+            
+            <p> {{p.about}} </p>
+            <hr/>
+            <span>Product Price <span>{{p.price|currency}}    </span>  
+                <i *ngIf="p.discount>0"> 
+                    with {{p.discount}}% Off 
+                    <span *ngIf="p.discount>9">
+                        <b style="color: blue; font-family: Georgia, 'Times New Roman', Times, serif;"><u> Recommended</u></b>
+                    </span><br/>
+                    <b>Delivered With in 6 days</b>
+                </i><br/>
+                <b>Select Transaction Mode</b>
+                    <td>
+                        <select>
+                            <option> Pay on Delivery </option>
+                            <option> UPI </option>
+                            <option>Card</option>
+                        </select>
+                    </td> 
+        
+            </span> 
+            <br/>
+            Product Height {{p.height}} cm
+           
+            
+        </td>
+        
+    </tr>
+</table>
+<button value="{{p.productId}}" (click)="goForBuy(product.value)" #product> Buy Product </button>
